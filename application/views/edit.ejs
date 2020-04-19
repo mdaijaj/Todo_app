@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+  <link 
+    rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous"
+  >
+</head>
+<body>
+	<div class="container">
+		<h1>Edit</h1>
+		<form action="/edit/<%= data.ID %>" method="POST">
+			<div class="form-group">
+				<label for="title">Title</label>
+				<input 
+					type="text" 
+					class="form-control" 
+					id="title" 
+					name="title"
+					value="<%= data.Title %>"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="country">Country</label>
+				<select id="country" class="form-control" name="country">
+					<option value="Indonesia" <%= data.Country == "Indonesia" ? "selected" : "" %>>Indonesia</option>
+					<option value="Japan" <%= data.Country == "Japan" ? "selected" : "" %>>Japan</option>
+					<option value="Korea" <%= data.Country == "Korea" ? "selected" : "" %>>Korea</option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-info">Save</button>
+		</form >
+	</div>
+</body>
+</html>
